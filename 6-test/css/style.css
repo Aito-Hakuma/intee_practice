@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+	background-color: #eee;
+	color: #444;
+}
+h1, h2, h3, p, dl, dt, dd, ul{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+a{
+	color:#0275d8;
+}
+
+header{
+    /*１．背景色を#fffにする*/
+    background-color:#fff;
+    /*２．上方向に枠線を付ける*/
+    border-top:50px #444 solid;
+    /*３．下方向に枠線を付ける*/
+    border-bottom:1px #A6A6A6 solid;
+    /*４．影を付ける*/
+    box-shadow:0 3px 10px rgba(0,0,0,0.3);
+    /*positionプロパティの値をrelativeにする*/
+    position:relative;
+}
+
+header div{
+    /*１．幅を960pxにする*/
+    width:960px;
+    /*２．右余白をautoにする*/
+    margin-right:auto;
+    /*３．左余白をautoにする*/
+    margin-left:auto;
+    /*「nav .nav-contact」セレクタの基準を設定する*/
+    position:relative;
+}
+
+header h1{
+    /*１．余白内の上余白を30pxにする*/
+    padding-top:30px;
+    /*２．幅を260pxにする*/
+    width:260px;
+    /*３．左に配置*/
+    float:left;
+}
+
+nav{
+    /*１．幅を640pxにする*/
+    width:640px;
+    /*２．右に配置*/
+    float:right;
+}
+
+/*「:after」の前に、floatプロパティが指定された要素（「header h1」と「nav」）の親要素を記述してください。*/
+header div:after{
+    display:block;
+    content:"";
+    clear: both;
+}
+
+nav li{
+    /*１．リストマーカーのスタイルを非表示にする*/
+    list-style:none;
+    /*２．幅を160pxにする*/
+    width:160px;
+    /*３．左詰めで並べる*/
+    float:left;
+}
+
+/*「;after」の前に、floatプロパティが指定された要素（「nav li」）の親要素を記述してください。*/
+nav:after{
+    display:block;
+    content:"";
+    clear:both;
+}
+
+nav li a{
+    /*１．行の高さを80pxにする*/
+    line-height:80px;
+    /*２．行内の中央に配置*/
+    text-align:center;
+    /*３．テキストの色を#444にする*/
+    color:#444;
+    /*４．テキストの装飾（下線）を消す*/
+    text-decoration:none;
+    /*５．テキスト以外の部分もリンクエリアとして帰納させる*/
+    display:block;
+    /*ノーマル時のスタイルから状態別のスタイルへの変化にかかる時間0.5秒にする*/
+    transition-duration:0.5s;
+}
+
+nav .nav-contact{
+    /*１．左詰めの配置を適用しない*/
+    float:none;
+    /*２．絶対位置指定をおこなう*/
+    position:absolute;
+    /*４．「header div」の上端からの距離を-50pxにする*/
+    top:-50px;
+    /*５．「header div」の右端からの距離を0にする*/
+    right:0px;
+}
+
+nav .nav-contact a{
+    /*１．背景色を#ffc424にする*/
+    background-color:#ffc424;
+    /*２．imgフォルダの中のicn_contack.pngを背景画像として読み込む*/
+    background-image:url(../img/icn_contact.png);
+    /*３．背景画像をタイリングしない*/
+    background-repeat:no-repeat;
+    /*４．背景画像を左から22px、上から15pxの位置に配置する*/
+    background-position:22px 15px;
+    /*５．行の高さを50pxにする*/
+    line-height:50px;
+    /*６．要素内の左余白を60pxにする*/
+    padding-left:60px;
+    /*７行内の左寄せで配置*/
+    text-align:left;
+}
+
+nav li a:hover,nav li a:focus,nav li a:active{
+    /*１．テキストの色を#000にする*/
+    color:#000;
+    /*２．背景色を#eeeにする*/
+    background-color:#eee;
+}
+
+.container{
+    /*１．幅を960pxにする*/
+    width:960px;
+    /*２．右余白をautoにする*/
+    margin-right:auto;
+    /*３．左余白をautoにする*/
+    margin-left:auto;
+    /*４．要素内の下余白を5remにする*/
+    padding-bottom:5rem;
+    /*５．背景色を#fffにする*/
+    background-color:#fff;
+}
+
+main{
+    /*１．幅を75%にする*/
+    width:75%;
+    /*２．左に配置*/
+    float:left;
+    /*１．要素内の右余白を15pxにする*/
+    padding-right:15px;
+    /*２．要素内の左余白を15pxにする*/
+    padding-left:15px;
+    /*３．左右の余白を要素の幅（75%）に含める*/
+    box-sizing:border-box;
+}
+
+aside{
+    /*１．幅を25%nにする*/
+    width:25%;
+    /*２．右に配置*/
+    float:right;
+    /*１．要素内の右余白を15pxにする*/
+    padding-right:15px;
+    /*２．要素内の左余白を15pxにする*/
+    padding-left:15px;
+    /*３．左右の余白を要素の幅（25px）に含める*/
+    box-sizing:border-box;
+    /*上余白を2remにする*/
+    margin-top:2rem;
+}
+
+/*「:after」の前に、floatプロパティが指定された要素（「main」と「aside」）の親要素を記述してください*/
+.container:after{
+    display:block;
+    content:"";
+    clear:both;
+}
+
+.main-image{
+    /*１．imgフォルダの中のmain.jpgを背景画像として読み込む*/
+    background-image:url(../img/main.jpg);
+    /*２．背景画像をタイリングしない*/
+    background-repeat:no-repeat;
+    /*３．背景画像を水平方向の中央、上揃えに配置する*/
+    background-position:center top;
+    /*４．高さを350pxにする*/
+    height:350px;
+    /*５．行内の中央寄せで配置*/
+    text-align:center;
+}
+
+.main-image img{
+    /*１．要素内の上余白を124pxにする*/
+    padding-top:124px;
+}
+
+main h2{
+    /*１．上余白を2remにする*/
+    margin-top:2rem;
+    /*２．テキストの色を#0769afにする*/
+    color:#0769af;
+    /*３．テキストの大きさを30pxにする*/
+    font-size:30px;
+}
+
+main h3{
+    /*１．上余白を1.5remにする*/
+    margin-top:1.5rem;
+    /*２．テキストの大きさを24pxにする*/
+    font-size:24px;
+}
+
+main p{
+    /*１．上余白を1remにする*/
+    margin-top:1rem;
+    /*２．行の高さを1.5にする*/
+    line-height:1.5;
+}
+
+.reason-3 dl{
+    /*１．上余白を1remにする*/
+    margin-top:1rem;
+    /*２．右余白を30pxにする*/
+    margin-right:30px;
+    /*３．幅を203pxにする*/
+    width:203px;
+    /*４．左詰めで並べる*/
+    float:left;
+    /*５．4辺に枠線を付ける*/
+    border:1px solid #146DA8;
+    /*６．要素内の上余白を159pxにする*/
+    padding-top:159px;
+    /*７．背景色を#adc6d9にする*/
+    background-color:#adc6d9;
+    /*８．imgフォルダの中のimage_reason3-1.pngを背景画像として読み込む*/
+    background-image:url(../img/image_reason3-1.png);
+    /*９．背景画像をタイリングしない*/
+    background-repeat:no-repeat;
+    /*10．背景画像を水平方向の中央、上から15pxの位置に配置する*/
+    background-position:center 15px;
+}
+
+.reason-3 dl:nth-of-type(2){
+    /*１．imgフォルダの中のimage_reason3-2.pngを背景画像として読み込む*/
+    background-image:url(../img/image_reason3-2.png);
+    /*２．背景画像を水平方向の中央、上から19pxの位置に配置する*/
+    background-position:center 19px;
+}
+
+.reason-3 dl:nth-of-type(3){
+    /*１．imgフォルダの中のimage_reason3-3.pngを背景画像として読み込む*/
+    background-image:url(../img/image_reason3-3.png);
+    /*２．背景画像を水平方向の中央、上から17pxの位置に配置する*/
+    background-position:center 17px;
+    /*３．右余白を0にする*/
+    margin-right:0;
+}
+
+.reason-3 dt{
+    /*１．背景色を#fffにする*/
+    background-color:#fff;
+    /*２．要素内の余白を、上15px 右15px 下0 左15pxにする*/
+    padding:15px 15px 0 15px;
+    /*３．テキストを太字にする*/
+    font-weight:bold;
+    /*４．要素の幅の最小値を5.5emにする*/
+    min-height:5.5em;
+}
+
+.reason-3 dd{
+    /*１．背景色を#fffにする*/
+    background-color:#fff;
+    /*２．要素内の余白を、上0 右15px 下15px 左15pxにする*/
+    padding:0 15px 15px 15px;
+}
+
+.reason-3 ul{
+    /*１．リストマーカーのスタイルを非表示にする*/
+    list-style:none;
+}
+
+.reason-3 li{
+    /*１．下余白を0.5remにする*/
+    margin-bottom:0.5rem;
+    /*２．imgフォルダの中のicn_list.pngを背景画像として読み込む*/
+    background-image:url(../img/icn_list.png);
+    /*３．背景画像をタイリングしない*/
+    background-repeat:no-repeat;
+    /*４．背景画像を水平方向の左、上から8pxの位置に配置する*/
+    background-position:left 8px;
+    /*５．要素内の左余白を12pxにする*/
+    padding-left:12px;
+}
+
+.reason-3 li:last-of-type{
+    /*１．下余白を0にする*/
+    margin-bottom:0;
+}
+
+aside .oomori dl{
+    /*１．上余白を1remにする*/
+    margin-top:1rem;
+}
+
+aside dd{
+    /*１．テキストの大きさを87.5%にする*/
+    font-size:87.5%;
+}
+
+aside a:hover img,aside a:focus img,aside a:active img{
+    /*１．透明度*/
+    opacity:0.7;
+}
+
+footer{
+    /*１．背景色を#444にする*/
+    background-color:#444;
+}
+
+footer p{
+    /*１．要素内の余白を、上下2rem 左右0にする*/
+    padding:2rem 0;
+    /*２．行内の中央に配置*/
+    text-align:center;
+    /*３．テキストの色を#fffにする*/
+    color:#fff;
+}
+
